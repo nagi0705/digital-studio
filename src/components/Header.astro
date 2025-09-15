@@ -1,7 +1,6 @@
 ---
 import { menuMain } from "~/data/menus.js";
 import LogoContainer from "~/components//LogoContainer.astro";
-import SocialMediaIcons from "./SocialMediaIcons.astro";
 
 const rmTrailingSlash = (path: string): string => {
   return path.endsWith("/") && path.length > 1 
@@ -45,21 +44,26 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 							</button>
 						</div>
 						<div class="max-lg:hidden absolute w-full inset-x-0">
-							<div class="flex gap-x-12 justify-end xl:justify-center items-center">
-								{
-									menuMain.map((item) => (
-										<a
-											href={item.url}
-											class={`transition text-base/6 font-semibold hover:text-fuchsia-500 ${pathname === item.url ? "menu-item-active" : ""}`}
-										>
-											{item.name}
-										</a>
-									))
-								}
+							<div class="flex justify-end xl:justify-center items-center">
+								<!-- ナビゲーションボタン -->
+								<div class="flex gap-x-2">
+									<a href="#skills" class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full hover:bg-teal-200 transition-colors text-xs font-medium">
+										スキル
+									</a>
+									<a href="#portfolio" class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full hover:bg-teal-200 transition-colors text-xs font-medium">
+										実績
+									</a>
+									<a href="#faq" class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full hover:bg-teal-200 transition-colors text-xs font-medium">
+										FAQ
+									</a>
+									<a href="#about" class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full hover:bg-teal-200 transition-colors text-xs font-medium">
+										経歴
+									</a>
+									<a href="https://cor-jp.com/contact/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full hover:bg-teal-200 transition-colors text-xs font-medium">
+										お問い合わせ
+									</a>
+								</div>
 							</div>
-						</div>
-						<div class="relative z-10 flex items-center gap-x-4 max-xl:hidden">
-							<SocialMediaIcons />
 						</div>
 					</nav>
 				</div>
@@ -96,18 +100,25 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 				</div>
 				<div class="mt-6 flow-root">
 					<div class="-my-6 divide-y divide-gray-500/10">
-						<div class="space-y-2 py-6 mt-16">
-							{
-								menuMain.map((item) => (
-									<a
-										x-on:click="open = false"
-										href={item.url}
-										class={`block py-2 text-center font-semibold text-3xl ${pathname === item.url ? "menu-item-active" : ""}`}
-									>
-										{item.name}
-									</a>
-								))
-							}
+						<div class="space-y-4 py-6 mt-16">
+							<!-- モバイル用ナビゲーションボタン -->
+							<div class="flex flex-wrap gap-2 justify-center">
+								<a href="#skills" x-on:click="open = false" class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
+									スキル・技術
+								</a>
+								<a href="#portfolio" x-on:click="open = false" class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
+									制作実績
+								</a>
+								<a href="#faq" x-on:click="open = false" class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
+									よくある質問
+								</a>
+								<a href="#about" x-on:click="open = false" class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
+									経歴・背景
+								</a>
+								<a href="https://cor-jp.com/contact/" target="_blank" rel="noopener noreferrer" x-on:click="open = false" class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
+									お問い合わせ
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

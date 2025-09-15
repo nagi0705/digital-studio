@@ -26,6 +26,13 @@ import { siteName, siteLang, themeColor } from "~/data/config";
 		<meta name="apple-mobile-web-app-title" content={siteName} />
 		<link rel="manifest" href="/site.webmanifest" />
 
+		<!-- スムーズスクロール -->
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+		</style>
+
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />

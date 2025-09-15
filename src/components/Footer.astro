@@ -1,18 +1,22 @@
 ---
 import { siteName } from "~/data/config";
-import SocialMediaIcons from "./SocialMediaIcons.astro";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-gradient-to-r from-fuchsia-500 to-teal-500 text-white">
-	<div class="py-12 md:flex md:items-center md:justify-between container">
-		<div class="flex justify-center gap-x-6 md:order-2 [&_svg]:text-white">
-			<SocialMediaIcons />
+	<div class="py-12 container">
+		<div class="text-center text-base">
+			<p class="mb-2">
+				&copy; {currentYear} {siteName}. All rights reserved.
+			</p>
+			<div class="flex flex-wrap gap-4 justify-center">
+				<a href="https://github.com/nagi0705" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+					GitHub
+				</a>
+				<a href="https://cor-jp.com/contact/" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+					お問い合わせ
+				</a>
+			</div>
 		</div>
-		<p class="mt-10 max-md:text-center text-base">
-			&copy; {currentYear}
-			{siteName}. All rights reserved.<br />
-			<a class="underline" href="/privacy-policy">Privacy policy</a>
-		</p>
 	</div>
 </footer>
