@@ -34,6 +34,31 @@ const faq = [
 		answer: "はい、GitHubで公開しているプロダクトをご覧いただけます。実際のコードや技術的な実装を確認していただき、技術力や開発スタイルをご判断いただけます。",
 	},
 ];
+
+// Projects
+const projects = [
+	{
+		name: "My Music Player",
+		description: "TypeScriptで開発した音楽プレイヤーアプリケーション。\nモダンなWeb技術を活用したユーザーインターフェースと音楽管理機能を実装。",
+		tech: ["TypeScript", "HTML5", "CSS3", "Web Audio API"],
+		githubUrl: "https://github.com/nagi0705/my-music-player",
+		color: "blue"
+	},
+	{
+		name: "GitHub Search App",
+		description: "Vue.jsを使用して開発したGitHub検索アプリケーション。\nGitHub APIを活用し、リポジトリ検索とユーザー情報表示機能を実装。",
+		tech: ["Vue.js", "JavaScript", "GitHub API", "CSS"],
+		githubUrl: "https://github.com/nagi0705/github-search-app",
+		color: "green"
+	},
+	{
+		name: "PawPals Next",
+		description: "JavaScriptで開発したペット関連のWebアプリケーション。\nペットの管理とコミュニティ機能を提供するプラットフォーム。",
+		tech: ["JavaScript", "Next.js", "Node.js", "Database"],
+		githubUrl: "https://github.com/nagi0705/pawpals-next",
+		color: "purple"
+	}
+];
 ---
 
 <Layout title="ホーム" pageTitle="あなたのビジネスをデジタルでサポート" description="エンジニアのポートフォリオサイトです。Web開発からシステム構築まで、幅広い技術領域でサポートします。様々な技術を活用して、ユーザー体験の向上とビジネス成長を実現します。">
@@ -58,12 +83,10 @@ const faq = [
 							
 						</p>
 						<p class="text-sm opacity-90">
-							お問い合わせについて業務委託なので直接お問合せは致しかねます。<br>お手数ですが、Cor.incに問い合わせをいただきますようお願いいたします。
+							お問い合わせについて業務委託なので直接お問い合せは致しかねます。<br>お手数ですが、Cor.incに問い合わせをいただきますようお願いいたします。
 						</p>
 
-						<div class="not-prose mt-8">
-							<Button url="https://cor-jp.com/contact/" color="white"> お問い合わせ </Button>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -115,8 +138,56 @@ const faq = [
 				</p>
 			</Heading>
 
-			<div class="text-center py-8">
-				<p class="text-gray-600 mb-4">制作実績は準備中です。GitHubでプロジェクトをご確認ください。</p>
+
+			<!-- プロジェクトカード -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+				{projects.map((project) => (
+					<div class="bg-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-pink-200">
+						<div class="mb-4">
+							<div class={`w-12 h-12 rounded-lg flex items-center justify-center mb-3 ${
+								project.color === 'blue' ? 'bg-blue-100' :
+								project.color === 'green' ? 'bg-green-100' :
+								'bg-purple-100'
+							}`}>
+								<svg class={`w-6 h-6 ${
+									project.color === 'blue' ? 'text-blue-600' :
+									project.color === 'green' ? 'text-green-600' :
+									'text-purple-600'
+								}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+								</svg>
+							</div>
+							<h3 class="text-xl font-semibold text-gray-900 mb-2">{project.name}</h3>
+							<p class="text-gray-600 text-sm leading-relaxed mb-4" set:html={project.description.replace(/\n/g, '<br>')}></p>
+						</div>
+						
+						<div class="mb-4">
+							<div class="flex flex-wrap gap-2">
+								{project.tech.map((tech) => (
+									<span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+										{tech}
+									</span>
+								))}
+							</div>
+						</div>
+						
+						<a 
+							href={project.githubUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
+						>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+							</svg>
+							GitHubで見る
+						</a>
+					</div>
+				))}
+			</div>
+
+			<!-- GitHub全体へのリンク -->
+			<div class="text-center mt-8">
 				<a 
 					href="https://github.com/nagi0705" 
 					target="_blank" 
@@ -126,7 +197,7 @@ const faq = [
 					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 						<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
 					</svg>
-					GitHubでプロジェクトを見る
+					すべてのプロジェクトを見る
 				</a>
 			</div>
 		</Container>
