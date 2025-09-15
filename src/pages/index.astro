@@ -7,26 +7,24 @@ import Hero from "~/components/Hero.astro";
 import Button from "~/components/Button.astro";
 import Faq from "~/components/Faq.astro";
 import CallToAction from "~/components/CallToAction.astro";
-import ShowCats from "~/components/ShowCats.astro";
-import ShowBlogs from "~/components/ShowBlogs.astro";
 import Heading from "~/components/Heading.astro";
 import CatNameGenerator from "~/components/CatNameGenerator.astro";
 
 // Images
 import CatBackground from "~/assets/images/1354CF20-8A6F-44C8-907A-CD4AFD4E32C4.jpeg";
-import CatOne from "~/assets/images/pexels-chevonrossouw-2558605.jpg";
-import CatTwo from "~/assets/images/pexels-minan1398-1003994.jpg";
+import ProfileImage from "~/assets/images/IMG_pro.jpeg";
+import FaqImage from "~/assets/images/IMG_5306.JPG";
 import ChihuahuaBackground from "~/assets/images/1650285B-A330-467E-A0D7-6300ABD30BD3_1_105_c.jpeg";
 
 // Faq
 const faq = [
 	{
 		question: "どのような技術スタックを使用していますか？",
-		answer: "React、Vue、Astro、Next.jsなどのモダンなフロントエンド技術を中心に、効率的で保守性の高いWebアプリケーションを開発しています。また、TypeScript、Tailwind CSS、Gitなどのツールも活用しています。",
+		answer: "Ruby、Vue、Astro、Next.jsなどの様々な技術を使用し、効率的で保守性の高いWebアプリケーションを開発しています。また、TypeScript、Tailwind CSS、Gitなどのツールも活用しています。",
 	},
 	{
 		question: "開発期間はどのくらいかかりますか？",
-		answer: "プロジェクトの規模や要件によって異なりますが、小規模なWebサイトであれば1-2週間、中規模のWebアプリケーションであれば1-2ヶ月程度を想定しています。詳細なスケジュールについては、お気軽にご相談ください。",
+		answer: "プロジェクトの規模や要件によって異なりますが、小規模なWebサイトであれば1週間前後、中規模のWebアプリケーションであれば1-2ヶ月程度を想定しています。詳細なスケジュールについては、お気軽にご相談ください。",
 	},
 	{
 		question: "技術的な相談は可能ですか？",
@@ -39,7 +37,7 @@ const faq = [
 ];
 ---
 
-<Layout title="ホーム" pageTitle="あなたのビジネスをデジタルでサポート" description="エンジニアのポートフォリオサイトです。Web開発からシステム構築まで、幅広い技術領域でサポートします。モダンな技術を活用して、ユーザー体験の向上とビジネス成長を実現します。">
+<Layout title="ホーム" pageTitle="あなたのビジネスをデジタルでサポート" description="エンジニアのポートフォリオサイトです。Web開発からシステム構築まで、幅広い技術領域でサポートします。様々な技術を活用して、ユーザー体験の向上とビジネス成長を実現します。">
 	<Section class:list={"relative"}>
 		<Picture
 			src={CatBackground}
@@ -97,7 +95,7 @@ const faq = [
 					</div>
 				</div>
 				<div slot="hero-content-right" class="-rotate-1">
-					<Image src={CatOne} alt="Cat" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
+					<Image src={ProfileImage} alt="Profile" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
 				</div>
 			</Hero>
 		</Container>
@@ -109,12 +107,14 @@ const faq = [
 				<h2 slot="heading-title" class="h2 text-teal-500">制作実績</h2>
 				<p slot="heading-content">
 					GitHubで公開しているプロダクトをご紹介します。
-					モダンなWeb技術を活用した様々なプロジェクトに取り組んでいます。
+					様々なWeb技術を活用した様々なプロジェクトに取り組んでいます。
 					技術的なチャレンジや学びを大切にしながら、品質の高いWebアプリケーションを開発しています。
 				</p>
 			</Heading>
 
-			<ShowCats cats={["reckoning", "chairman-meow", "pawdre-hepburn"]} />
+			<div class="text-center py-8">
+				<p class="text-gray-600">制作実績は準備中です。GitHubでプロジェクトをご確認ください。</p>
+			</div>
 		</Container>
 	</Section>
 
@@ -126,7 +126,7 @@ const faq = [
 					<Faq items={faq} color="fuchsia" />
 				</div>
 				<div slot="hero-content-right" class="rotate-1">
-					<Image src={CatTwo} alt="Cat" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
+					<Image src={FaqImage} alt="FAQ" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
 				</div>
 			</Hero>
 		</Container>
@@ -138,13 +138,12 @@ const faq = [
 			<Heading>
 				<h2 slot="heading-title" class="h2 text-teal-500">経歴・背景</h2>
 				<p slot="heading-content">
-					フロントエンドエンジニアとして、ユーザー体験の向上とビジネス成長を実現することを目標としています。
-					モダンなWeb技術を学び続け、品質の高いWebアプリケーションの開発に取り組んでいます。
-					技術的なチャレンジを楽しみながら、継続的な学習と成長を心がけています。
+					エンジニアとして、ユーザー体験の向上とビジネス成長を実現することを目標としています。
+					様々なWeb技術を学び続け、品質の高いWebアプリケーションの開発に取り組んでいます。
+					技術からデザイン性まで楽しみながら、継続的な学習と成長を心がけています。
 				</p>
 			</Heading>
 
-			<ShowBlogs posts={["hello-world", "new-arrival-luna", "new-site-launched"]} />
 		</Container>
 	</Section>
 
