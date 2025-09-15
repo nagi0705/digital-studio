@@ -1,8 +1,8 @@
 ---
 title: New Site Launched
 slug: new-site-launched
-image: src/assets/images/pexels-thirdman-8942612.webp
-imageAlt: image of cat
+image: src/assets/images/1354CF20-8A6F-44C8-907A-CD4AFD4E32C4.jpeg
+imageAlt: image of dog
 excerpt: Announcing the launch of our new cat shelter website.
 publishDate: 2024-01-21
 ---
@@ -26,11 +26,11 @@ Here are some of the key features of our new site:
 
 Our new site is designed to be intuitive and easy to navigate. Here are some tips to help you get started:
 
--   **Home Page**: Get an overview of our shelter and latest news.
--   **Adopt**: View available cats and learn about our adoption process.
--   **Volunteer**: Find out how you can help and sign up to volunteer.
--   **Donate**: Make a contribution to support our mission.
--   **Blog**: Stay updated with our latest news and stories.
+- **Home Page**: Get an overview of our shelter and latest news.
+- **Adopt**: View available cats and learn about our adoption process.
+- **Volunteer**: Find out how you can help and sign up to volunteer.
+- **Donate**: Make a contribution to support our mission.
+- **Blog**: Stay updated with our latest news and stories.
 
 ## Join Us
 

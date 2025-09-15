@@ -2,8 +2,8 @@
 export const siteLang = "en-US";
 export const siteCurrency = "USD";
 export const siteDomain = "pawstronaut.com";
-export const siteName = "Pawstronaut";
-export const siteSlogan = "The best pet shelter in the galaxy!";
+export const siteName = "Digital Studio";
+export const siteSlogan = "あなたのビジネスをデジタルでサポート";
 export const themeColor = "#FF0000";
 
 export const phone = {
