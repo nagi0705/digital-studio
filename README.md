@@ -1,25 +1,26 @@
-# Pawstronaut
+# Digital Studio
 
-Pawstronaut is a free theme for the Astro framework, designed specifically for animal shelters. It provides a beautiful and functional starting point for your next animal shelter website. Whether you're running a cat shelter, dog shelter, or any other type of animal rescue organization, Pawstronaut has you covered with its clean design and easy-to-use components.
+Digital Studio is a modern, responsive website built with Astro framework. This project showcases a professional digital studio website with clean design and optimized performance.
 
-## 🌟 About Pawstronaut
+## 🌟 About Digital Studio
 
-Pawstronaut is perfect for animal shelter owners, developers, and designers who want to quickly set up a stylish and responsive website. It leverages modern web technologies to ensure a smooth and performant user experience.
+Digital Studio is a professional website that demonstrates modern web development practices using Astro, TailwindCSS, and Firebase Hosting. The site features a responsive design optimized for performance and user experience.
 
 ## 🛠️ Technologies Used
 
 -   **Astro**: The core framework for building fast, content-focused websites.
 -   **TailwindCSS**: A utility-first CSS framework for rapid UI development.
--   **Alpine.js**: A lightweight JavaScript framework for adding interactivity.
+-   **Firebase Hosting**: For hosting and deployment.
+-   **GitHub Actions**: For CI/CD automation.
 
 ## 🚀 Installation and Deployment
 
-To get started with Pawstronaut, follow these steps:
+To get started with Digital Studio, follow these steps:
 
-1. **Clone Pawstronaut**:
+1. **Clone the repository**:
 
     ```sh
-    git clone https://github.com/your-repo/Pawstronaut.git
+    git clone https://github.com/nagi0705/digital-studio.git
     ```
 
 2. **Install Dependencies**:
@@ -40,67 +41,73 @@ To get started with Pawstronaut, follow these steps:
     npm run build
     ```
 
-## 📂 Project Structure
+5. **Deploy to Firebase Hosting**:
 
-Inside of your Pawstronaut project, you'll see the following folders and files:
+    ```sh
+    npx firebase-tools deploy --only hosting
+    ```
+
+## 🔄 CI/CD Pipeline
+
+This project includes an automated CI/CD pipeline using GitHub Actions:
+
+- **Automatic Deployment**: Pushes to the `main` branch automatically trigger deployment to Firebase Hosting
+- **Build Process**: The pipeline builds the Astro project and deploys the optimized static files
+- **Status Monitoring**: Check deployment status in the GitHub Actions tab
+
+### Live Site
+🌐 **Production URL**: https://digital-studio-c5abe.web.app
+
+## 📂 Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions CI/CD pipeline
+├── public/                     # Static assets
 ├── src/
-│   ├── assets/
-│   ├── components/
+│   ├── assets/                 # Images and icons
+│   ├── components/             # Astro components
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── Layout.astro        # Main layout component
 │   ├── pages/
-│   │   ├── index.astro
-│   │   ├── about-us.astro
-│   │   ├── blog/
-│   │   ├── cats/
-│   │   ├── contact.astro
-│   │   └── privacy-policy.mdx
+│   │   ├── index.astro         # Home page
+│   │   ├── 404.astro           # 404 error page
+│   │   └── privacy-policy.mdx  # Privacy policy page
 │   └── styles/
-└── package.json
+│       └── tailwind.css        # TailwindCSS styles
+├── firebase.json               # Firebase configuration
+├── .firebaserc                 # Firebase project settings
+└── package.json                # Dependencies and scripts
 ```
 
-## 📄 Premade Pages
+## 🧩 Key Components
 
--   Home
--   About Us
--   Blog
--   Cats
--   Contact
--   Privacy Policy
+-   **Header**: Navigation and branding
+-   **Hero**: Main landing section
+-   **Footer**: Site footer with links
+-   **Container**: Layout wrapper component
+-   **Button**: Reusable button component
+-   **Card**: Content card component
 
-## 🧩 Available Components
+## 🔧 Development
 
--   Article
--   Badge
--   Button
--   Card
--   CardBlogPost
--   CardCat
--   CardMember
--   CallToAction
--   Container
--   Faq
--   Footer
--   FormAdoption
--   FormContactastro
--   Header
--   Heading
--   Hero
--   LogoContainer
--   Map
--   Members
--   Section
--   ShowBlogs
--   ShowCats
--   SocialMediaIcons
--   TableHours
--   WideImage
+### Local Development
+```sh
+npm run dev
+```
 
-## 👀 Stuck?
+### Build
+```sh
+npm run build
+```
 
-If you have any questions or need help with Pawstronaut, feel free to reach out to me at info@wpinfusion.com, or open an issue on the [Pawstronaut GitHub repository](https://github.com/wpinfusion/pawstronaut)
+### Preview Production Build
+```sh
+npm run preview
+```
+
+## 📝 License
+
+This project is licensed under the MIT License.
